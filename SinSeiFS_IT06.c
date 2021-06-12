@@ -94,9 +94,9 @@ void logFile(char *level, char *cmd, int res, int lenDesc, const char *desc[]) {
 
   time(&t);
   tmp = localtime(&t);
-  strftime(timeBuff, sizeof(timeBuff), "%d%m%y-%H:%M:%S", tmp);
+  strftime(timeBuff, sizeof(timeBuff), "%d%m%Y-%H:%M:%S", tmp);
 
-  fprintf(f, "%s::%s::%s::%d", level, timeBuff, cmd, res);
+  fprintf(f, "%s::%s::%s", level, timeBuff, cmd);
   for (int i = 0; i < lenDesc; i++) {
     fprintf(f, "::%s", desc[i]);
   }
@@ -195,7 +195,7 @@ static int xmp_mkdir(const char *path, mode_t mode)
   if (filePtr != NULL) {
     if (filePtr - ptr == 0) {
       const char *desc[] = {path};
-      logFile("SPECIAL", "AtoZ", 0, 1, desc);
+      logFile("INFO", "AtoZ", 0, 1, desc);
     }
   }
 
@@ -232,7 +232,7 @@ static int xmp_rename(const char *from, const char *to)
   if (toStartPtr != NULL) {
     if (toStartPtr - toPtr == 0) {
       const char *desc[] = {fto};
-      logFile("SPECIAL", "AtoZ", 0, 1, desc);
+      logFile("INFO", "AtoZ", 0, 1, desc);
     }
   }
 
