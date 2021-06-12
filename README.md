@@ -293,6 +293,6 @@ Pertama, fungsi akan membuka dan membuat (jika belum ada) file log pada `logpath
 ### Screenshot
 **Hasil Running Code**
 <br>
-<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-3-IT06-2021/blob/main/screenshot/Screenshot (475).png" />
+<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-4-IT06-2021/blob/main/screenshot/Screenshot (475).png" />
 <br>
 ### Kendala
