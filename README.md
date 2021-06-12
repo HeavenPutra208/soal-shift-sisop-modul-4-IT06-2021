@@ -16,9 +16,11 @@ Kelompok IT06
 
 ## Soal 1
 **Penyelesaian**
+
 soal meminta kita untuk membuat sebuah metode enkripsi atbash yang akan terjadi jika sebuah direktori itu di-**`mkdir`**  dan di-**`rename`** dengan awalan `AtoZ_`, yang dimana setiap file atau direktori yang berada di dalam direktori baru akan dienkripsi dengan atbash. Jika direktori dengan awalan `AtoZ_` direname menjadi tidak ternecode atau dengan awalan `AtoZ_` maka semua isi dari direktori akan terdekripsi. Filesystem yang telah ditentukan adalah direktori ` /home/[USER]/Downloads`.
 
 **Pembahasan**
+
 Kami membuat 3 buah fungsi yang dapat membantu pengerjaan soal nomor 1 yang berupa fungsi `decrypt`, `getDirAndFile`, dan `ChangePath`. `decrypt` berfungsi untuk melakukan enkripsi dan dekripsi atbash, `getDirAndFile` untuk mendapatkan direktori dan file dari path yang telah ditentukan, dan `ChangePath` digunakan untuk menganti path yang ditentukan, dan juga digunakan untuk mengecek apakah path yang diganti diperlukan melakukan dekripsi ataupun enkripsinya.
 
 **Fungsi decrypt**
@@ -279,9 +281,11 @@ Mohon maaf soal ini tidak kami kerjakan.
 
 ## Soal 4
 **Penyelesaian**
+
 Permintaan soal adalah Log system yang akan terbentuk bernama “SinSeiFS.log” pada direktori home pengguna (/home/[user]/SinSeiFS.log), Log system ini akan menyimpan daftar perintah system call yang telah dijalankan pada filesystem, log yang dibuat akan dibagi menjadi dua level(INFO dan WARNING), untuk log level WARNING, digunakan untuk mencatat syscall rmdir dan unlink. sisanya, akan dicatat pada level INFO, Format untuk logging yaitu: `[Level]::[dd][mm][yyyy]-[HH]:[MM]:[SS]:[CMD]::[DESC :: DESC]`.
 
 **Pembahasan**
+
 ```c
 void logFile(char *level, char *cmd, int res, int lenDesc, const char *desc[]) {
   FILE *f = fopen(logpath, "a");
