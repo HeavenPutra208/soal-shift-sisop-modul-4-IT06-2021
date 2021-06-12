@@ -245,7 +245,21 @@ Pada contoh diatas, merupakan *system-call* `_getattr()`. Pada *system-call* ter
 
 ### Screenshot
 **Hasil Running Code**
-
+<br>
+<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-4-IT06-2021/blob/main/screenshot/Screenshot (469).png" />
+<br>
+<br>
+<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-4-IT06-2021/blob/main/screenshot/Screenshot (470).png" />
+<br>
+<br>
+<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-4-IT06-2021/blob/main/screenshot/Screenshot (471).png" />
+<br>
+<br>
+<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-4-IT06-2021/blob/main/screenshot/Screenshot (472).png" />
+<br>
+<br>
+<img height="500" src="https://github.com/HeavenPutra208/soal-shift-sisop-modul-4-IT06-2021/blob/main/screenshot/Screenshot (473).png" />
+<br>
 ### Kendala
 
 
