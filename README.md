@@ -265,6 +265,30 @@ Mohon maaf soal ini tidak kami kerjakan.
 
 ## Soal 4
 **Penyelesaian**
+Permintaan soal adalah Log system yang akan terbentuk bernama “SinSeiFS.log” pada direktori home pengguna (/home/[user]/SinSeiFS.log), Log system ini akan menyimpan daftar perintah system call yang telah dijalankan pada filesystem, log yang dibuat akan dibagi menjadi dua level(INFO dan WARNING), untuk log level WARNING, digunakan untuk mencatat syscall rmdir dan unlink. sisanya, akan dicatat pada level INFO, Format untuk logging yaitu: `[Level]::[dd][mm][yyyy]-[HH]:[MM]:[SS]:[CMD]::[DESC :: DESC]`.
+
+**Pembahasan**
+```c
+void logFile(char *level, char *cmd, int res, int lenDesc, const char *desc[]) {
+  FILE *f = fopen(logpath, "a");
+  time_t t;
+  struct tm *tmp;
+  char timeBuff[100];
+
+  time(&t);
+  tmp = localtime(&t);
+  strftime(timeBuff, sizeof(timeBuff), "%d%m%Y-%H:%M:%S", tmp);
+
+  fprintf(f, "%s::%s::%s::%d", level, timeBuff, cmd, res);
+  for (int i = 0; i < lenDesc; i++) {
+    fprintf(f, "::%s", desc[i]);
+  }
+  fprintf(f, "\n");
+
+  fclose(f);
+}
+```
+Pertama, fungsi akan membuka dan membuat (jika belum ada) file log pada `logpath` menggunakan `fopen()` kedalam pointer FILE `*f`. Lalu akan dicari waktu saat itu menggunakan variable `t` dan `*tmp` dan akan disimpan dalam bentuk string pada `timeBuff`. Lalu dijalankan fungsi `time()` pada alamat `t` untuk menyimpan timestamp saat ini. Lalu `t` akan diubah menjadi `struct tm` menggunakan fungsi `localtime()` kedalam variable `tmp`. Lalu menggunakan fungsi `strftime()` untuk memformat `tmp` menjadi waktu yang telah terformat ke dalam variable `timeBuff`. Setelah itu, `level`, `timeBuff`, `cmd`, dan `res` akan diprint kedalam file `f` menggunakan fungsi `fprintf()`. Lalu untuk masing-masing `desc` akan diiterasi menggunakan `lenDesc`, dimana masing-masing iterasi akan memasukkan `desc[i]` kedalam `f` dengan format yang sesuai. Lalu terakhir akan memasukkan `"\n"` diakhir log. Setelah log selesai, `f` akan di `fclose()`. Setiap *system-call* akan memanggil fungsi `logFile()` untuk melakukan logging.
 
 ### Screenshot
 **Hasil Running Code**
